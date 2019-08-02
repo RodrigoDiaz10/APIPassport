@@ -15,18 +15,20 @@ export class AuthService {
   });
 
   registerUser(name: string, email: string, password: string) {
-    const url_api = "http://localhost:8000/register";
+    const url_api = "http://127.0.0.1:8000/api/auth/signup";
     return this.htttp
       .post<UserInterface>(
         url_api,
         {
           name: name,
           email: email,
-          password: password
+          password: password,
+          password_confirmation:password 
         },
         { headers: this.headers }
       )
       .pipe(map(data => data));
+      //hola
   }
 
   loginuser(email: string, password: string): Observable<any> {
