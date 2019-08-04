@@ -24,6 +24,7 @@ import { TruncateTextPipe } from './pipes/truncate-text.pipe';
 // Externals
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ModalComponent,
     TruncateTextPipe
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgxSpinnerModule, NgxPaginationModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgxSpinnerModule, NgxPaginationModule, BrowserAnimationsModule],
   providers: [DataApiService],
   bootstrap: [AppComponent]
 })

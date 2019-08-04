@@ -1,0 +1,54 @@
+<div class="row mt-5">
+  <div class="col">
+    <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Miembros</th>
+          <th scope="col">Lider de grupo</th>
+          <th scope="col">Link</th>
+          <th scope="col">topic</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">scope</th>
+          <th scope="col">Herramientas</th>
+          <th scope="col">Objetivo</th>
+          <th scope="col">nivel</th>
+          <th scope="col">area</th>
+          <th scope="col">estado</th>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let group of groups | paginate: {itemsPerPage: 7, currentPage: pageActual}; index as i">
+
+          <th scope="row"> {{i+1}}</th>
+          <td>{{group.name_proyect}}</td>
+          <td>{{group.members}}</td>
+          <td>{{group.group_leader}}</td>
+          <td>{{group.link}}</td>
+          <td>{{group.topic}}</td>
+          <td>{{group.description_proyect}}</td>
+          <td>{{group.scope}}</td>
+          <td>{{group.tools}}</td>
+          <td>{{group.objetive}}</td>
+          <td>{{group.level}}</td>
+          <td>{{group.area}}</td>
+          <td>{{group.state}}</td>
+          <!--<td>{{group.oferta == 1 ? 'SI' : 'NO'}}</td>-->
+          <td>
+            <button class="btn btn-primary" (click)="onPreUpdateGroup(group)" data-toggle="modal" data-target="#modalBook">Update</button>
+          </td>
+          <td>
+            <a href="/admin/list-books" class="btn btn-danger" (click)="onDeleteGroup(group.id)">Delete</a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+  </div>
+</div>
+<app-modal></app-modal>

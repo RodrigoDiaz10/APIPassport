@@ -1,0 +1,103 @@
+<!-- Modal -->
+<div id="modalBook" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{!this.dataApiService.selectedGroup.id ? 'New Book' : 'Update Book'}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-book" #formBook="ngForm" (ngSubmit)="onSaveBook(formBook)">
+          <input type="hidden" id="id" name="id" class="form-control" [(ngModel)]="this.dataApiService.selectedGroup.id">
+          <div class="form-group">
+            <label for="name_proyect">Nombre del Proyecto</label>
+            <input type="text" id="name_proyect" name="name_proyect" class="form-control" placeholder="Titulo" [(ngModel)]="this.dataApiService.selectedGroup.name_proyect">
+          </div>
+          <div class="form-row">
+            <!--<div class="form-group col-md-6">
+              <label for="idioma">miembros</label>
+              <select name="idioma" id="idioma" class="form-control" [(ngModel)]="this.dataApiService.selectedGroup.members">
+                <option value="Inglés">Inglés</option>
+                <option value="Castellano">Castellano</option>
+              </select>
+
+            </div>-->
+
+            <div class="form-group col-md-6">
+              <label for="members">Miembros</label>
+              <input type="text" id="members" name="members" class="form-control" placeholder="members" [(ngModel)]="this.dataApiService.selectedGroup.members">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="group_leader">Lider</label>
+              <input type="text" id="group_leader" name="group_leader" class="form-control" placeholder="group_leader" [(ngModel)]="this.dataApiService.selectedGroup.group_leader">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="period">period</label>
+              <input type="text" id="period" name="period" class="form-control" placeholder="period" [(ngModel)]="this.dataApiService.selectedGroup.period">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="topic">topic</label>
+              <input type="text" id="topic" name="topic" class="form-control" placeholder="topic" [(ngModel)]="this.dataApiService.selectedGroup.topic">
+            </div>
+
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="link">link GitHub</label>
+              <input type="text" id="link" name="link" class="form-control" placeholder="link  GitHub" [(ngModel)]="this.dataApiService.selectedGroup.link">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="scope">scope</label>
+              <input type="text" id="scope" name="scope" class="form-control" placeholder="scope" [(ngModel)]="this.dataApiService.selectedGroup.scope">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="area">area</label>
+              <input type="text" id="area" name="area" class="form-control" placeholder="area" [(ngModel)]="this.dataApiService.selectedGroup.area">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="state">state</label>
+              <input type="text" id="state" name="state" class="form-control" placeholder="state" [(ngModel)]="this.dataApiService.selectedGroup.state">
+            </div>
+
+            <!--div class="form-group col-md-6">
+              <label for="oferta">Oferta</label>
+              <select name="oferta" id="oferta" class="form-control" [(ngModel)]="this.dataApiService.selectedGroup.oferta">
+                <option value="1">SI</option>
+                <option value="0">NO</option>
+              </select>
+            </div>-->
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="tools">Herramientas</label>
+              <input type="text" id="tools" name="tools" class="form-control" placeholder="Herramientas" [(ngModel)]="this.dataApiService.selectedGroup.tools">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="objetive">objetive</label>
+              <input type="text" id="objetive" name="objetive" class="form-control" placeholder="objetive" [(ngModel)]="this.dataApiService.selectedGroup.objetive">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="level">Nivel</label>
+              <input type="text" id="level" name="level" class="form-control" placeholder="level" [(ngModel)]="this.dataApiService.selectedGroup.level">
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="description_proyect">Descripción</label>
+            <textarea name="description_proyect" id="description_proyect" class="form-control" cols="50" rows="4" [(ngModel)]="this.dataApiService.selectedGroup.description_proyect"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary float-right">Save Book</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
           const token = user.id;
           this.authService.setToken(token);
           this.router.navigate(['/user/profile']);
-          location.reload();
+          //location.reload();
         },
         res => {
           this.msgError = res.error.error.details.messages.email;
